@@ -1,0 +1,47 @@
+.tabla-precios {
+  width: 100%;
+  color: #fff;
+}
+
+.tabla-precios h2 {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.tabla-precios h2 span{
+    color: #e67d37;
+}
+
+.tabla-precios table {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #858585;
+    font-size: .8rem;
+}
+
+.tabla-precios tr {
+    border: 1px solid #000000;
+}
+
+.tabla-precios-titulos, .tabla-extras, .tabla-envio {
+    background-color: #333;
+}
+
+.tabla-precios th, .tabla-precios td {
+    padding: 10px;
+    text-align: left;
+}
+
+.tabla-precios td {
+    color: #dbdbdb;
+}
+
+
+.tabla-precios span{
+    color: #e67d37;
+    font-weight: 600;
+}

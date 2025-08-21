@@ -4,6 +4,8 @@ import SectionCompra from "../components/Compra/Compra";
 import Phrase from '../components/Phrases/Phrase';
 import SobreAutor from '../components/SobreAutor/SobreAutor';
 import SobreLibro from '../components/SobreLibro/SobreLibro';
+import TablaPrecios from '../components/TablaPrecios/TablaPrecios';
+import { color } from 'framer-motion';
 
 
 
@@ -48,14 +50,22 @@ const Home = () => {
           onNextPhrase={handleNextPhrase}
           loading={loading}
         />
-        <SobreAutor />
-        <SobreLibro />
+        <div className='container-main'>
+          <SobreAutor />
+          <SobreLibro />
+          <TablaPrecios />
+          <h2 className='cami'>TE AMO MI </h2>
+          <h2 className='cami'>PUCHUCHURU CELOTITA</h2>
+        </div>
       </main>
-    </>
+    </>  
   );
+  
 }
 
 export default Home;
+
+
 
 
 
