@@ -21,7 +21,7 @@ const Phrase: React.FC<PhraseProps> = ({ phrase, onNextPhrase, loading}: { phras
                         <h2 className="phrase-title">Fragmentos del libro que pueden interesarte</h2>
                         <ImFire className="icon-fire" />
                     </div>
-                    <div>
+                    <div className="phrase-content">
                         {loading ? (
                             <LoadingPhrase />
                             ) : (

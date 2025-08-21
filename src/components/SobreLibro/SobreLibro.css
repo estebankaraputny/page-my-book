@@ -4,8 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: hsl(60, 2%, 12%);
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .sobre-libro h2 {
@@ -14,7 +13,7 @@
 }
 
 .sobre-libro h2 span {
-    color: #FF6347; 
+    color: var(--color-secondary); 
 }
 
 .sobre-cards {
@@ -27,8 +26,8 @@
 }
 
 .sobre-card {
-    border: 1px solid #a5a5a5;
-    border-top: 5px solid #FF6347;
+    border: 1px solid var(--color-gray);
+    border-top: 5px solid var(--color-orange);
     padding: 15px;
     margin: 10px 0;
     width: 80%;
@@ -53,7 +52,7 @@
     justify-content: center;
     margin-top: 20px;
     padding-top: 2rem;
-    border-top: 5px inset #a5a5a5;
+    border-top: 5px inset var(--color-gray);
 }
 .sobre-preguntas h2 {
     font-size: 1rem;
