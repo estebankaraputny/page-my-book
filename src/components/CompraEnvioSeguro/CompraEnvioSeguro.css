@@ -31,6 +31,7 @@
 
 .card-compra-segura{
     height: 10rem;
+    margin-top: 1rem;
 }
 
 .card-compra-segura span{
@@ -46,7 +47,7 @@
 .card-compra-segura p{
     font-size: .8rem;
     width: 80%;
-    margin: auto;
+    margin:auto;
 }
 
 .compra-segura_politica{
@@ -60,6 +61,7 @@
 .compra-segura_politica p{
     font-size: .6rem;
     text-align: center;
+    
 }
 
 .compra-segura_politica p span{

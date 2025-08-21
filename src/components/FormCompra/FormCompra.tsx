@@ -1,0 +1,25 @@
+import Form from "./Form";
+import "./FormCompra.css"
+
+const FormCompra = () => {
+  return (
+    <>
+      <section className="section-form">
+        <div className="form-info">
+          <h2>
+            Envíanos tu <span>Solicitud de Compra</span>
+          </h2>
+          <p>
+            ¡Gracias por tu compra! Ayúdanos a procesar tu acceso a los
+            contenidos extras y a enviarte tus regalos exclusivos rellenando
+            este sencillo formulario con tu comprobante (Obligatorio para ejemplares físicos). Si tienes alguna duda,
+            contáctanos a <span>coachontologicoesteban@gmail.com</span>
+          </p>
+        </div>
+        <Form />
+      </section>
+    </>
+  );
+};
+
+export default FormCompra;

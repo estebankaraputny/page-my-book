@@ -1,0 +1,163 @@
+import React, { useState, useRef } from "react";
+import "./FormCompra.css";
+import emailjs from "@emailjs/browser";
+import { FaRegHeart } from "react-icons/fa";
+
+interface Errors {
+  nombreCompleto?: string;
+  email?: string;
+//   archivo?: string;
+  numberPhone?: string;
+}
+
+interface Client {
+  nombreCompleto: string;
+  email: string;
+//   archivo: File | null;
+    numberPhone: string;
+  message: string;
+}
+
+export default function Form() {
+  const [info, setInfo] = useState<Client>({
+    nombreCompleto: "",
+    email: "",
+    // archivo: null,
+    numberPhone: "",
+    message: ""
+  });
+  const [error, setError] = useState<Errors>({});
+  const [clients, setUsers] = useState<Client[]>([]);
+  const formRef = useRef<HTMLFormElement>(null); // 👈 usamos uno solo
+
+  // --- VALIDACIONES ---
+//   function validateFile(archivo: File | null): boolean {
+//     if (!archivo) return false;
+//     const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+//     return allowedTypes.includes(archivo.type);
+//   }
+
+  function isValidEmail(email: string): boolean {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  }
+
+  function validateNumberPhone(number: string): boolean {
+    const phoneRegex = /^[0-9]{8,15}$/; // solo números, entre 8 y 15 dígitos
+    return phoneRegex.test(number);
+  }
+
+  const validateForm = () => {
+    const newErrors: Errors = {};
+    if (!info.nombreCompleto.trim() || info.nombreCompleto.length < 3)
+      newErrors.nombreCompleto = "Nombre Inválido (mínimo 3 letras)";
+    if (!isValidEmail(info.email)) newErrors.email = "Email Inválido";
+    if (!validateNumberPhone(info.numberPhone))
+      newErrors.numberPhone = "Numero de teléfono Inválido";
+
+    setError(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // --- RESET FORM ---
+  const cleanForm = () => {
+    setInfo({
+      nombreCompleto: "",
+      email: "",
+    //   archivo: null,
+    numberPhone: "",
+      message: ""
+    });
+    setError({});
+    formRef.current?.reset(); // limpia también input file
+  };
+
+  // --- SUBMIT ---
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      console.log("Formulario no enviado ❌");
+      return;
+    }
+
+    console.log("Formulario válido, enviando...");
+    setUsers([...clients, info]);
+
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          "service_hszqlst",   // tu Service ID
+          "template_uq9m49o",  // tu Template ID
+          formRef.current,
+          "9K_7e1hMIZIMei5Z2"  // tu Public Key
+        )
+        .then(() => {
+          alert("Formulario enviado con éxito ✅");
+          cleanForm();
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Error al enviar el formulario ❌");
+        });
+    }
+  };
+
+  // --- HANDLE FILE ---
+//   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//     const file = e.target.files?.[0] || null;
+//     setInfo({ ...info, archivo: file });
+//   };
+
+  return (
+    <form ref={formRef} className="form-compra" onSubmit={handleSubmit}>
+
+      <label htmlFor="">
+        Nombre Completo {error.nombreCompleto && <span>{error.nombreCompleto}</span>}
+        <input
+          type="text"
+          value={info.nombreCompleto}
+          onChange={(e) => setInfo({ ...info, nombreCompleto: e.target.value })}
+          placeholder="Pedro Gimenez"
+          name="nombreCompleto"
+        />
+      </label>
+
+      <label htmlFor="">
+        Correo electrónico {error.email && <span>{error.email}</span>}
+        <input
+          type="text"
+          value={info.email}
+          onChange={(e) => setInfo({ ...info, email: e.target.value })}
+          placeholder="ejemplo@gmail.com"
+          name="email"
+        />
+        
+      </label>
+
+      <label htmlFor="">
+        Número de telefóno {error.numberPhone && <span>{error.numberPhone}</span>}
+        <input
+          type="text"
+          value={info.numberPhone}
+          onChange={(e) => setInfo({ ...info, numberPhone: e.target.value })}
+          placeholder="1234567890"
+          name="numberPhone"
+        />
+      </label>
+
+      <label htmlFor="">
+        Mensaje (opcional)
+        <textarea
+          name="message"
+          placeholder="Escribe tu mensaje"
+          value={info.message}
+          onChange={(e) => setInfo({ ...info, message: e.target.value })}
+        />
+      </label>
+
+      <button type="submit" className="form-button">Enviar</button>
+      <p>¡Gracias por ser parte de la aventura! <FaRegHeart /></p>
+    </form>
+  );
+}

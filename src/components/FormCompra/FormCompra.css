@@ -1,0 +1,91 @@
+.section-form{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    color: #fff;
+}
+
+.form-info{
+    color: #e67d37;
+
+}
+
+.form-info h2{
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.5rem;
+
+}
+
+.form-info h2 span {
+    color: #e67d37;
+    font-weight: 600;
+}
+
+.form-info p{
+    font-size: .8rem;
+    color: #dbdbdb;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.form-compra{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.form-compra label{
+    display: flex;
+    flex-direction: column;
+    font-size: .8rem;
+    font-weight: 600;
+    
+}
+
+.form-compra label input, .form-compra label textarea{
+    width: 100%;
+    background-color: var(--color-fondo-second);
+    border: none;
+    padding: .5rem;
+    margin-top: .5rem;
+    color: var(--color-gray);
+    border-radius: 5px;
+}
+
+.form-compra label textarea{
+    resize: none;
+    height: 6rem;
+}
+
+
+.form-compra label span{
+    font-size: .6rem;
+    color: var(--color-primary);
+    font-weight: 200;
+    margin-top: .2rem;
+}
+
+.form-button{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.form-compra p{
+    font-size: .9rem;
+    text-align: center;
+    color: var(--color-gray);
+}

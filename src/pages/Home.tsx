@@ -6,6 +6,8 @@ import SobreAutor from '../components/SobreAutor/SobreAutor';
 import SobreLibro from '../components/SobreLibro/SobreLibro';
 import TablaPrecios from '../components/TablaPrecios/TablaPrecios';
 import CompraEnvioSeguro from '../components/CompraEnvioSeguro/CompraEnvioSeguro';
+import FormCompra from '../components/FormCompra/FormCompra';
+import Footer from '../components/Footer/Footer';
 
 
 
@@ -55,8 +57,10 @@ const Home = () => {
           <SobreLibro />
           <TablaPrecios />
           <CompraEnvioSeguro/>
+          <FormCompra />
         </div>
       </main>
+      <Footer />
     </>  
   );
   
