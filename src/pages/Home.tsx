@@ -5,7 +5,6 @@ import Phrase from '../components/Phrases/Phrase';
 import SobreAutor from '../components/SobreAutor/SobreAutor';
 import SobreLibro from '../components/SobreLibro/SobreLibro';
 import TablaPrecios from '../components/TablaPrecios/TablaPrecios';
-import { color } from 'framer-motion';
 
 
 
@@ -54,8 +53,6 @@ const Home = () => {
           <SobreAutor />
           <SobreLibro />
           <TablaPrecios />
-          <h2 className='cami'>TE AMO MI </h2>
-          <h2 className='cami'>PUCHUCHURU CELOTITA</h2>
         </div>
       </main>
     </>  
