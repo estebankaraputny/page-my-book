@@ -5,7 +5,7 @@
     display: flex;
     flex-wrap: wrap;
 }
-
+ 
 
 .footer-contact h3, .footer-contact_redes h3, .footer-copy h3{
     font-size: 1rem;
@@ -16,6 +16,8 @@
     font-size: .8rem ;
     margin: .5rem;
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 .footer-contact_redes ul{
@@ -23,10 +25,24 @@
     flex-wrap: wrap;
 }
 
-
 .footer-contact_redes ul li a, .footer-copy_copy p{
     text-decoration: none;
     color: var(--color-orange);
-
 }
 
+
+@media (min-width: 1080px) {
+    .footer{
+        justify-content: space-evenly;
+    }
+    .footer-contact, .footer-copy{
+        text-align: center;
+        
+    }
+
+    .footer-contact_contact p, .footer-contact_redes ul li, .footer-copy_copy p, .footer-copy p{
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+}

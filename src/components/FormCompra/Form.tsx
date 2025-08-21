@@ -50,10 +50,10 @@ export default function Form() {
   const validateForm = () => {
     const newErrors: Errors = {};
     if (!info.nombreCompleto.trim() || info.nombreCompleto.length < 3)
-      newErrors.nombreCompleto = "Nombre Inválido (mínimo 3 letras)";
-    if (!isValidEmail(info.email)) newErrors.email = "Email Inválido";
+      newErrors.nombreCompleto = "Nombre es requerido (mínimo 3 letras)";
+    if (!isValidEmail(info.email)) newErrors.email = "Email es requerido";
     if (!validateNumberPhone(info.numberPhone))
-      newErrors.numberPhone = "Numero de teléfono Inválido";
+      newErrors.numberPhone = "Numero de teléfono es requerido";
 
     setError(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -112,7 +112,7 @@ export default function Form() {
   return (
     <form ref={formRef} className="form-compra" onSubmit={handleSubmit}>
 
-      <label htmlFor="">
+      <label htmlFor="nombreCompleto">
         Nombre Completo {error.nombreCompleto && <span>{error.nombreCompleto}</span>}
         <input
           type="text"
@@ -120,10 +120,11 @@ export default function Form() {
           onChange={(e) => setInfo({ ...info, nombreCompleto: e.target.value })}
           placeholder="Pedro Gimenez"
           name="nombreCompleto"
+          id="nombreCompleto"
         />
       </label>
 
-      <label htmlFor="">
+      <label htmlFor="email">
         Correo electrónico {error.email && <span>{error.email}</span>}
         <input
           type="text"
@@ -131,11 +132,12 @@ export default function Form() {
           onChange={(e) => setInfo({ ...info, email: e.target.value })}
           placeholder="ejemplo@gmail.com"
           name="email"
+          id="email"
         />
         
       </label>
 
-      <label htmlFor="">
+      <label htmlFor="numberPhone">
         Número de telefóno {error.numberPhone && <span>{error.numberPhone}</span>}
         <input
           type="text"
@@ -143,16 +145,18 @@ export default function Form() {
           onChange={(e) => setInfo({ ...info, numberPhone: e.target.value })}
           placeholder="1234567890"
           name="numberPhone"
+          id="numberPhone"
         />
       </label>
 
-      <label htmlFor="">
+      <label htmlFor="message">
         Mensaje (opcional)
         <textarea
           name="message"
           placeholder="Escribe tu mensaje"
           value={info.message}
           onChange={(e) => setInfo({ ...info, message: e.target.value })}
+          id="message"
         />
       </label>
 

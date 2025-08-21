@@ -7,23 +7,17 @@
     color: #fff;
 }
 
-.form-info{
-    color: #e67d37;
-
-}
-
 .form-info h2{
     text-align: center;
     margin-top: 4rem;
     margin-bottom: 1rem;
     color: #fff;
-    font-weight: 400;
-    font-size: 1.5rem;
-
+    font-weight: var(--subtitle-wieght);
+    font-size: var(--subtitle-size);
 }
 
 .form-info h2 span {
-    color: #e67d37;
+    color: var(--color-primary);
     font-weight: 600;
 }
 
@@ -89,3 +83,31 @@
     text-align: center;
     color: var(--color-gray);
 }
+
+
+@media (min-width: 1080px) {
+
+    .form-info{
+        width: 50%;
+    }
+
+    .form-compra{
+        width: 40%;
+    }
+
+    .form-info h2{
+        margin-top: 2rem;
+    }
+
+    .form-info p{
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .form-compra label, .form-compra label input, .form-compra label textarea, .form-button{
+        font-size: 1rem;
+    }
+
+}
+
+

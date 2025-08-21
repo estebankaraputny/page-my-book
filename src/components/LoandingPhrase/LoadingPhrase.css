@@ -1,7 +1,12 @@
+.phrase-container{
+  width: 100%;
+}
+
 .card {
   width: 100%;
   text-align: center;
   border-radius: .8rem;
+  height: 10rem;
 }
 
 .card__skeleton {
@@ -30,4 +35,17 @@
   to {
     background-position: -100% 0;
   }
+}
+
+@media (min-width: 1080px){
+    .phrase-content{
+      flex-direction: column;
+    }
+    
+    .card {
+      width: 100%;
+      text-align: center;
+      border-radius: .8rem;
+      padding: 2rem;
+    }
 }

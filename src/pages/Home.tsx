@@ -45,7 +45,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className='main'>
         <SectionCompra />
         <Phrase
           phrase={currentPhrase?.text}

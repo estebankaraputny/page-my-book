@@ -1,19 +1,20 @@
 
-/* 
 .header-container{
-    min-height: 100vh;
-} */
-
-.navbar{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 15px;
+    min-height: 100vh;    
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.navbar {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    z-index: 10;
+}
 
-.nav-list{
+
+.nav-list {
     display: flex;
     list-style: none;
     padding: 0;
@@ -21,63 +22,62 @@
     align-items: center;
 }
 
-.nav-button{
+.nav-button {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
-    transition: background-color 0.3s ease;
 }
 
-.nav-button:hover{
-   border-bottom: 1px solid white;
+.nav-button:hover {
+    border-bottom: 1px solid white;
 }
 
-.portada-container{
+.portada-container {
     height: calc(100vh - 60px);
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 1 100%;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    padding-top: 5rem;
+
 }
 
-.portada-texto{
+.portada-texto {
     display: flex;
     justify-content: end;
     flex-direction: column;
     padding: 20px;
 }
 
-.portada-titulo{
+.portada-titulo {
     font-size: 3.8rem;
     font-weight: 500;
     font-family: "Oswald", sans-serif;
     padding: 0 !important;
 }
 
-.portada-titulo2{
+.portada-titulo2 {
     font-size: 2.3rem;
     font-weight: 350;
     font-family: "Oswald", sans-serif;
     letter-spacing: .2rem;
 }
 
-.portada-descripcion{
+.portada-descripcion {
     font-size: 1.2rem;
     margin: 10px 0;
 }
 
-.portada-botones{
+.portada-botones {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.portada-boton{
+.portada-boton {
     color: var(--color-text);
     padding: 10px 20px;
     text-decoration: none;
@@ -85,41 +85,45 @@
 }
 
 
-.compra{
+.compra {
     background-color: var(--color-primary);
 }
 
-.saber-mas{
+.compra:hover{
+    background-color: var(--color-secondary);
+}
+
+.saber-mas {
     border: 1px solid var(--color-white);
 }
 
 
-.portada-boton:hover{
+.portada-boton:hover {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.534);
     transition: box-shadow 0.2s ease;
 }
 
 
-.portada-imagenes{
+.portada-imagenes {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 100%;
     padding: 20px;
     height: 50%;
     position: relative;
 
 }
 
-.portada-imagenes img{
+.portada-imagenes img {
     width: 120px;
     height: 180px;
     object-fit: cover;
     transition: transform 0.3s ease;
-     position: absolute;
+    position: absolute;
 }
 
-.portada-imagenes img:hover{
+.portada-imagenes img:hover {
     transform: translate(-50%, -50%) scale(1.9);
     z-index: 10;
 }
@@ -145,7 +149,7 @@
     transform: translate(-50%, -50%) scale(1.5);
 }
 
-.video-fondo{
+.video-fondo {
     position: absolute;
     position: fixed;
     top: 0;
@@ -154,4 +158,66 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
+}
+
+@media (min-width: 700px) {
+    .navbar {
+        font-size: 1.1rem;
+    }
+
+    .portada-titulo {
+        font-size: 5rem;
+    }
+
+    .portada-titulo2 {
+        font-size: 3.3rem;
+    }
+
+    .portada-imagenes {
+        width: 50%;
+    }
+
+    .nav-list {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 1rem;
+        border-radius: 0px 0px 15px 15px;
+        width: 50%;
+        
+    }
+
+}
+
+@media (min-width: 1080px) {
+    /* .portada-container{
+        padding: 0;
+    } */
+    .navbar{
+        padding: 0;
+    }
+
+    .portada-texto {
+        justify-content: flex-start;
+        padding: 0;
+        width: 60%;
+        height: 50%;
+    }
+
+    .portada-imagenes {
+        width: 40%;
+        height: auto;
+    }
+
+    .portada-titulo {
+        font-size: 7rem;
+    }
+
+    .portada-titulo2 {
+        font-size: 4.8rem;
+    }
+
+    .portada-imagenes img {
+        width: 180px;
+        height: 280px;
+    }
 }

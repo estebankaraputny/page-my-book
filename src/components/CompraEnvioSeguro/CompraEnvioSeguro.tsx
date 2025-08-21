@@ -26,13 +26,6 @@ const CompraEnvioSeguro = () => {
                 icon={<FaMoneyBillTransfer />}
             />
       </div>
-      <div className="compra-segura_politica">
-        <p><CiCircleInfo /> 
-        <span> Política de Privacidad: </span>
-        
-          Valoramos tu privacidad. Tus datos no serán compartidos con terceros.
-        </p>
-      </div>
     </section>
   );
 };

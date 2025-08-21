@@ -14,7 +14,7 @@ const Footer = () => {
                     Contacto
                 </h3>
                 <div className="footer-contact_contact">
-                    <p>Correo: <span>coachontologicoesteban@gmail.com</span></p>
+                    <p>Correo: <span> coachontologicoesteban@gmail.com</span></p>
                     <p>Teléfono: +54 9 11 2838 0119</p>
                 </div>
                 <div className="footer-contact_redes">

@@ -37,8 +37,8 @@ const TablaPrecios = () => {
           </tr>
           <tr className="tabla-precio">
             <th>Precio</th>
-            <td><span>$9999</span> En preventa. Precio Normal $15.000</td>
-            <td><span>8 U$D</span> En preventa. Precio Normal 13 U$D</td>
+            <td><span>$9.999</span> En preventa. Precio Normal $15.000</td>
+            <td><span>7,99 U$D</span> En preventa. Precio Normal 12,99 U$D</td>
           </tr>
         </tbody>
       </table>

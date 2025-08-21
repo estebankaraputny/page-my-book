@@ -35,6 +35,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--color-gray);
     text-align: center;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -58,25 +62,17 @@
     color: var(--color-white);
 }
 
-/* @media screen and (max-width: 600px) {
-    .phrase-container {
-        width: 90%;
-        padding: 15px;
+@media (min-width: 700px){
+    .change-button{
+        width: 20%;
     }
-    .phrase {
-        font-size: 20px;
-    }
-    .author {
-        font-size: 14px;
-    }
-    .phrase-controls {
-        width: 100%;
+}
+
+@media (min-width: 1080px){
+    .phrase-container{
+        width: 50%;
+        display: flex;
         flex-direction: column;
-        align-items: center;
-    }
-    .button-phrase {
-        width: 100%;
         justify-content: center;
     }
-    
-} */
+}

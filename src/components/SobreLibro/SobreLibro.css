@@ -1,24 +1,27 @@
 .sobre-libro{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     padding: 20px;
     color: var(--color-white);
+    flex-wrap: wrap;
 }
 
 .sobre-libro h2 {
-    font-size: 24px;
+    font-weight: var(--subtitle-wieght);
+    font-size: var(--subtitle-size);
     margin-bottom: 10px;
 }
 
 .sobre-libro h2 span {
-    color: var(--color-secondary); 
+    color: var(--color-primary);
+    font-weight: 600; 
 }
 
 .sobre-cards {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -27,7 +30,7 @@
 
 .sobre-card {
     border: 1px solid var(--color-gray);
-    border-top: 5px solid var(--color-orange);
+    border-top: 5px solid var(--color-secondary);
     padding: 15px;
     margin: 10px 0;
     width: 80%;
@@ -69,3 +72,22 @@
     font-weight: bold;
 }
 
+@media (min-width: 700px) {
+    .sobre-cards{
+        justify-content: space-evenly;
+    }
+    
+    .sobre-card{
+        width: 30%;
+        min-height: 11rem;
+        flex-basis: 30%;
+    }
+
+    .sobre-preguntas{
+        align-items: flex-start;
+    }
+
+    .sobre-preguntas ul li{
+        font-size: .9rem;
+    }
+}

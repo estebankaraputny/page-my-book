@@ -6,6 +6,8 @@
 }
 
 .sobre-autor h2{
+    font-weight: var(--subtitle-wieght);
+    font-size: var(--subtitle-size);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -67,3 +69,22 @@
     background-color: #555;
 }
 
+
+@media (min-width: 1080px) {
+    .contenido-autor{
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .info-autor p{
+        text-align: left;
+    }
+
+    .foto-autor img{
+        width: 280px;
+    }
+    
+    .redes-autor{
+        justify-content: flex-start;
+    }
+}
