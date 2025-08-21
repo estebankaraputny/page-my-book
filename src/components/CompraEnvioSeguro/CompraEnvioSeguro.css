@@ -1,0 +1,68 @@
+.section-compra_segura{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    color: #dbdbdb;
+}
+
+.section-compra_segura h2{
+        text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.section-compra_segura h2 span {
+    color: #e67d37;
+    font-weight: 600;
+}
+
+.compra-segura_cards{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card-compra-segura{
+    height: 10rem;
+}
+
+.card-compra-segura span{
+    font-size: 3rem;
+    color: #e67d37;
+}
+
+.card-compra-segura h3{
+    font-size: .9rem;
+    margin-bottom: 1rem;
+}
+
+.card-compra-segura p{
+    font-size: .8rem;
+    width: 80%;
+    margin: auto;
+}
+
+.compra-segura_politica{
+    margin: auto;
+    width: 90%;
+    background-color: #292C32;
+    border-radius: 15px;
+    padding: .5rem;
+}
+
+.compra-segura_politica p{
+    font-size: .6rem;
+    text-align: center;
+}
+
+.compra-segura_politica p span{
+    font-weight: 500;
+    color: #fff;
+}

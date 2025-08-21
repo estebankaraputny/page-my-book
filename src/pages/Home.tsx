@@ -5,6 +5,7 @@ import Phrase from '../components/Phrases/Phrase';
 import SobreAutor from '../components/SobreAutor/SobreAutor';
 import SobreLibro from '../components/SobreLibro/SobreLibro';
 import TablaPrecios from '../components/TablaPrecios/TablaPrecios';
+import CompraEnvioSeguro from '../components/CompraEnvioSeguro/CompraEnvioSeguro';
 
 
 
@@ -53,6 +54,7 @@ const Home = () => {
           <SobreAutor />
           <SobreLibro />
           <TablaPrecios />
+          <CompraEnvioSeguro/>
         </div>
       </main>
     </>  
