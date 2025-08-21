@@ -19,6 +19,15 @@ const SobreLibro = () => {
             info="El libro pertenece al género de fantasía épica."
         />
       </div>
+      <div className="sobre-preguntas">
+        <h2>Preguntas Frecuentes</h2>
+        <ul>
+            <li><span>¿Es adecuado para todas las edades?</span> Recomendado para mayores de 12 años debido a temas maduros.</li>
+            <li><span>¿Necesito haber leído algo del autor antes?</span> No, <span>Incendiarse sin consumirse</span> es una historia independiente, perfecta para nuevos lectores.</li>
+            <li><span>¿Habrá una secuela?</span> El autor tiene planes para expandir el universo, ¡pero este libro es una historia completa en sí misma!</li>
+            <li><span>¿Cuánto tiempo tomará leerlo?</span> Aproximadamente 4 horas, dependiendo de tu ritmo.</li>
+        </ul>
+      </div>
     </section>
   );
 }
