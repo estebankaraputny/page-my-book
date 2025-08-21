@@ -1,16 +1,63 @@
+import { useState, useEffect } from 'react';
 import Header from "../components/Header/Header";
+import SectionCompra from "../components/Compra/Compra";
+import Phrase from '../components/Phrases/Phrase';
+
 
 
 const Home = () => {
+
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const [phrases, setPhrases] = useState<any[]>([]);
+
+    // Cargar frases al iniciar
+    useEffect(() => {
+        setLoading(true);
+        fetch('/phrase.json')
+            .then(res => res.json())
+            .then(data => {
+                setPhrases(data);
+                setLoading(false);
+            });
+    }, []);
+
+    const handleNextPhrase = () => {
+        setLoading(true);
+        // Simula consulta, pero aquí solo cambia el índice
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+            setLoading(false);
+        }, 200); // Simula el tiempo de consulta
+    };
+
+
+    const currentPhrase = phrases[currentIndex];
+
+
   return (
     <>
       <Header />
-      <div className="home">
-        <h1 className="text-4xl font-bold">Welcome to My Book</h1>
-        <p className="mt-4 text-lg">This is the home page of my book website.</p>
-      </div>
+      <main>
+        <SectionCompra />
+        <Phrase
+          phrase={currentPhrase?.text}
+          onNextPhrase={handleNextPhrase}
+          loading={loading}
+        />
+
+      </main>
     </>
   );
 }
 
 export default Home;
+
+
+
+
+
+
+ 
+

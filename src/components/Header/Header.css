@@ -12,10 +12,10 @@
     box-sizing: border-box;
 }
 
-
+/* 
 .header-container{
     min-height: 100vh;
-}
+} */
 
 .navbar{
     display: flex;
@@ -59,19 +59,21 @@
 }
 
 .portada-texto{
-    flex: 1 1 100%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
     padding: 20px;
 }
 
 .portada-titulo{
-    font-size: 3rem;
+    font-size: 3.8rem;
     font-weight: 500;
     font-family: "Oswald", sans-serif;
     padding: 0 !important;
 }
 
 .portada-titulo2{
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: 350;
     font-family: "Oswald", sans-serif;
     letter-spacing: .2rem;
@@ -115,11 +117,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    flex: 1 1 100%;
+    flex: 1 100%;
     padding: 20px;
     height: 50%;
     position: relative;
+
 }
 
 .portada-imagenes img{
@@ -138,21 +140,21 @@
 .img-book {
     z-index: 2;
     left: 35%;
-    top: 50%;
+    top: 30%;
     transform: translate(-50%, -50%) scale(1.8);
 }
 
 .img-kindle {
     z-index: 1;
     left: 65%;
-    top: 50%;
+    top: 30%;
     transform: translate(-50%, -50%) scale(1.2);
 }
 
 .img-cell {
     z-index: 3;
     left: 50%;
-    top: 60%;
+    top: 40%;
     transform: translate(-50%, -50%) scale(1.5);
 }
 
