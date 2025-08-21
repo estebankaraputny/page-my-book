@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import Header from "../components/Header/Header";
 import SectionCompra from "../components/Compra/Compra";
 import Phrase from '../components/Phrases/Phrase';
+import SobreAutor from '../components/SobreAutor/SobreAutor';
+import SobreLibro from '../components/SobreLibro/SobreLibro';
 
 
 
@@ -46,7 +48,8 @@ const Home = () => {
           onNextPhrase={handleNextPhrase}
           loading={loading}
         />
-
+        <SobreAutor />
+        <SobreLibro />
       </main>
     </>
   );
