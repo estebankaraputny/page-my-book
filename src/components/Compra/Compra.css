@@ -59,7 +59,7 @@
 }
 
 .container-compra__content__img > img{
-    width: 85%;
+    width: 70%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0,0, 0.2);
@@ -80,12 +80,12 @@
 }
 
 .container-compra__content__info__text > .first-paragraph{
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
 .container-compra__content__info__text > .second-paragraph{
-    font-size: 1rem;
+    font-size: .8rem;
     margin-bottom: 20px;
     color: var(--color-white);
 }
@@ -98,7 +98,7 @@
 }
 
 .container-compra__content__info__text > .price-f, .container-compra__content__info__text > .price-d{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 5px;
 }
 
@@ -126,7 +126,7 @@
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
     width: 100%;
 }
