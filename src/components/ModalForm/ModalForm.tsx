@@ -35,6 +35,7 @@ const ModalForm: React.FC<ModalProps> = ({ isOpen, onClose, messageForm }) => {
       <div className="modal-content">
         <h2>Datos de Form</h2>
         <p>
+          <CiCircleInfo />
             {
                 messageForm
             }
