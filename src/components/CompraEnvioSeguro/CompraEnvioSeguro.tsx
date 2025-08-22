@@ -1,7 +1,6 @@
 import CardCompraSegura from "./CardSegura";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 import { RiMailSendLine } from "react-icons/ri";
-import { CiCircleInfo } from "react-icons/ci";
 
 const CompraEnvioSeguro = () => {
   return (

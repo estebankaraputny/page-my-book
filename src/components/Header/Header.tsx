@@ -2,9 +2,11 @@ import LibroF from '../../assets/libro-fisico.png';
 import LibroK from '../../assets/libro-kindle.png';
 import LibroM from '../../assets/libro-mobile.png';
 import VideoFondo from '../../assets/video-fondo.mp4';
+import {Link} from "react-scroll";
 import "./Header.css";
 
-const Header = () => {
+const Header: React.FC = () => {
+
   return (
 
     <div className="contenedor-header">
@@ -18,9 +20,21 @@ const Header = () => {
         <header className="header-container">
         <nav className="navbar">
             <ul className="nav-list">
-            <li><a href="/" className="nav-button">Inicio</a></li>
-            <li><a href="/about" className="nav-button">Saber más</a></li>
-            <li><a href="/contact" className="nav-button">Comprar</a></li>
+                <li>
+                    <Link to="inicio" smooth={true} duration={500} className="nav-button">
+                        Inicio
+                    </Link>
+                </li>
+                <li>
+                    <Link to="sobreLibro" smooth={true} duration={500} className="nav-button">
+                        Saber más
+                    </Link>
+                </li>
+                <li>
+                    <Link to="contacto" smooth={true} duration={500} className="nav-button">
+                        Comprar
+                    </Link>
+                </li>
             </ul>
         </nav>
         <div className='portada-container'>
@@ -31,7 +45,9 @@ const Header = () => {
                     Descubri una nueva forma de ver el mundo a través de mi historia.
                 </p>
                 <div className='portada-botones'>
-                    <a href="" className='portada-boton compra'>Comprar</a>
+                    <Link to="comprar" smooth={true} duration={500} className='portada-boton compra'>
+                        Comprar
+                    </Link>
                     <a href="" className='portada-boton saber-mas'>Saber más</a>
                 </div>
             </div>

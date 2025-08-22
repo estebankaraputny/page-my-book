@@ -1,20 +1,21 @@
 import React, { useState, useRef } from "react";
 import "./FormCompra.css";
 import emailjs from "@emailjs/browser";
+import ModalForm from "../ModalForm/ModalForm";
 import { FaRegHeart } from "react-icons/fa";
 
 interface Errors {
   nombreCompleto?: string;
   email?: string;
-//   archivo?: string;
+  //   archivo?: string;
   numberPhone?: string;
 }
 
 interface Client {
   nombreCompleto: string;
   email: string;
-//   archivo: File | null;
-    numberPhone: string;
+  //   archivo: File | null;
+  numberPhone: string;
   message: string;
 }
 
@@ -24,18 +25,20 @@ export default function Form() {
     email: "",
     // archivo: null,
     numberPhone: "",
-    message: ""
+    message: "",
   });
   const [error, setError] = useState<Errors>({});
   const [clients, setUsers] = useState<Client[]>([]);
   const formRef = useRef<HTMLFormElement>(null); // 👈 usamos uno solo
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
 
   // --- VALIDACIONES ---
-//   function validateFile(archivo: File | null): boolean {
-//     if (!archivo) return false;
-//     const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
-//     return allowedTypes.includes(archivo.type);
-//   }
+  //   function validateFile(archivo: File | null): boolean {
+  //     if (!archivo) return false;
+  //     const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+  //     return allowedTypes.includes(archivo.type);
+  //   }
 
   function isValidEmail(email: string): boolean {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -64,9 +67,9 @@ export default function Form() {
     setInfo({
       nombreCompleto: "",
       email: "",
-    //   archivo: null,
-    numberPhone: "",
-      message: ""
+      //   archivo: null,
+      numberPhone: "",
+      message: "",
     });
     setError({});
     formRef.current?.reset(); // limpia también input file
@@ -79,41 +82,43 @@ export default function Form() {
     if (!validateForm()) {
       console.log("Formulario no enviado ❌");
       return;
+    } else {
+      console.log("Formulario válido, enviando...");
+      setUsers([...clients, info]);
     }
-
-    console.log("Formulario válido, enviando...");
-    setUsers([...clients, info]);
 
     if (formRef.current) {
       emailjs
         .sendForm(
-          "service_hszqlst",   // tu Service ID
-          "template_uq9m49o",  // tu Template ID
+          "service_hszqlst", // tu Service ID
+          "template_uq9m49o", // tu Template ID
           formRef.current,
-          "9K_7e1hMIZIMei5Z2"  // tu Public Key
+          "9K_7e1hMIZIMei5Z2" // tu Public Key
         )
         .then(() => {
-          alert("Formulario enviado con éxito ✅");
+          setModalMessage("✅ Hemos recibido tu mensaje correctamente. Nos comunicaremos via Mail o WhatsApp para finalizar el pedido y la entrega del libro. ¡Gracias!");
+          setIsModalOpen(true);
           cleanForm();
         })
         .catch((error) => {
           console.error("Error:", error);
-          alert("Error al enviar el formulario ❌");
+          setModalMessage("❌ Hubo un error al enviar el formulario. Vuelve a intentarlo.");
+          setIsModalOpen(true);
         });
     }
   };
 
   // --- HANDLE FILE ---
-//   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     const file = e.target.files?.[0] || null;
-//     setInfo({ ...info, archivo: file });
-//   };
+  //   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //     const file = e.target.files?.[0] || null;
+  //     setInfo({ ...info, archivo: file });
+  //   };
 
   return (
     <form ref={formRef} className="form-compra" onSubmit={handleSubmit}>
-
       <label htmlFor="nombreCompleto">
-        Nombre Completo {error.nombreCompleto && <span>{error.nombreCompleto}</span>}
+        Nombre Completo{" "}
+        {error.nombreCompleto && <span>{error.nombreCompleto}</span>}
         <input
           type="text"
           value={info.nombreCompleto}
@@ -134,11 +139,11 @@ export default function Form() {
           name="email"
           id="email"
         />
-        
       </label>
 
       <label htmlFor="numberPhone">
-        Número de telefóno {error.numberPhone && <span>{error.numberPhone}</span>}
+        Número de telefóno{" "}
+        {error.numberPhone && <span>{error.numberPhone}</span>}
         <input
           type="text"
           value={info.numberPhone}
@@ -160,8 +165,17 @@ export default function Form() {
         />
       </label>
 
-      <button type="submit" className="form-button">Enviar</button>
-      <p>¡Gracias por ser parte de la aventura! <FaRegHeart /></p>
+      <button type="submit" className="form-button">
+        Enviar
+      </button>
+      <ModalForm
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        messageForm={modalMessage}
+      />
+      <p>
+        ¡Gracias por ser parte de la aventura! <FaRegHeart />
+      </p>
     </form>
   );
 }

@@ -1,9 +1,13 @@
+import { useState } from "react";
+import ModalTransferencia from "../ModalInfo/ModalInfo";
 import BookPortada from "../../assets/portada-libro.jpg";
 import "./Compra.css";
 
 const SectionCompra = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <section className="section-compra">
+    <section className="section-compra" id="comprar">
       <div className="container-compra">
         <div className="container-compra__title">
           <h2>PREVENTA</h2>
@@ -38,9 +42,14 @@ const SectionCompra = () => {
               </p>
             </div>
             <div className="container-compra__content__info__buttons">
-              <a href="" className="button-c">
-                Comprar Edición Fisica
-              </a>
+                <button onClick={() => setIsModalOpen(true)} className="button-c"> 
+                   Comprar Edición Fisica
+                </button>
+
+                <ModalTransferencia
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                />
               <a href="" className="button-d">
                 Comprar Ebook
               </a>
@@ -53,3 +62,6 @@ const SectionCompra = () => {
 };
 
 export default SectionCompra;
+
+
+

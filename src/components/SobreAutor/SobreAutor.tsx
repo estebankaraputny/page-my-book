@@ -5,7 +5,6 @@ import { AiFillInstagram } from "react-icons/ai";
 import { AiFillTikTok } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa";
 
-
 const SobreAutor = () => {
   return (
     <section className="sobre-autor">
@@ -16,27 +15,45 @@ const SobreAutor = () => {
         </div>
         <div className="info-autor">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Esteban Karaputny se esta formando como coach ontológico y creador de contenido de
+            desarrollo personal. Su historia, narrada a través de Gocchy Katny,
+            atraviesa la oscuridad con un mensaje de luz. Vive para sanar… y
+            para encender. Este libro no busca aplausos ni respuestas. Es el
+            grito silencioso de una vida que se reconstruyó desde el barro. Una
+            historia cruda, íntima y humana sobre el hambre, el perdón, la fe y
+            el amor propio. Si alguna vez pensaste en rendirte… este libro es
+            para vos.
           </p>
           <p className="title-redes">Redes del autor</p>
           <ul className="redes-autor">
             <li>
-                <a href="https://www.instagram.com/coach_estebank" target="_blank"><AiFillInstagram /> Instagram</a>
+              <a
+                href="https://www.instagram.com/coach_estebank"
+                target="_blank"
+              >
+                <AiFillInstagram /> Instagram
+              </a>
             </li>
             <li>
-                <a href="https://www.tiktok.com/@coach_estebank?is_from_webapp=1&sender_device=pc" target="_blank"><AiFillTikTok /> TikTok</a>
+              <a
+                href="https://www.tiktok.com/@coach_estebank?is_from_webapp=1&sender_device=pc"
+                target="_blank"
+              >
+                <AiFillTikTok /> TikTok
+              </a>
             </li>
             <li>
-                <a href="https://www.youtube.com/@CoachEstebanK" target="_blanki"><FaYoutube /> Youtube</a>
+              <a href="https://www.youtube.com/@CoachEstebanK" target="_blanki">
+                <FaYoutube /> Youtube
+              </a>
             </li>
             <li>
-                <a href="https://www.facebook.com/motivatecreoenti/" target="_blank"><FaFacebook /> Facebook</a>
+              <a
+                href="https://www.facebook.com/motivatecreoenti/"
+                target="_blank"
+              >
+                <FaFacebook /> Facebook
+              </a>
             </li>
           </ul>
         </div>

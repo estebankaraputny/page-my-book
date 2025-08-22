@@ -44,7 +44,9 @@ const Home = () => {
 
   return (
     <>
-      <Header />
+      <section id='inicio'>
+        <Header />
+      </section>
       <main className='main'>
         <SectionCompra />
         <Phrase
@@ -54,10 +56,14 @@ const Home = () => {
         />
         <div className='container-main'>
           <SobreAutor />
-          <SobreLibro />
+          <section id='sobreLibro'>
+            <SobreLibro />
+          </section>
           <TablaPrecios />
           <CompraEnvioSeguro/>
-          <FormCompra />
+          <section id='contacto'>
+            <FormCompra />
+          </section>
         </div>
       </main>
       <Footer />
