@@ -7,7 +7,7 @@ const SectionCompra = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="section-compra" id="comprar">
+    <section className="section-compra" id="comprar" data-aos="zoom-in-right">
       <div className="container-compra">
         <div className="container-compra__title">
           <h2>PREVENTA</h2>

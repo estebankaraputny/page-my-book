@@ -5,7 +5,7 @@ const FormCompra = () => {
   return (
     <>
       <section className="section-form">
-        <div className="form-info">
+        <div className="form-info" data-aos="zoom-in-right">
           <h2>
             Envíanos tu <span>Solicitud de Compra</span>
           </h2>

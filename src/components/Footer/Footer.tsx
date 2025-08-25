@@ -8,7 +8,8 @@ import "./Footer.css"
 
 const Footer = () => {
     return(
-        <footer className="footer">
+        <footer className="footer" data-aos="fade-up"
+     data-aos-anchor-placement="center-center">
             <div className="footer-contact">
                 <h3>
                     Contacto

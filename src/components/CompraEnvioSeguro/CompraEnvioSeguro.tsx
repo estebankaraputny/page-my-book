@@ -4,7 +4,8 @@ import { RiMailSendLine } from "react-icons/ri";
 
 const CompraEnvioSeguro = () => {
   return (
-    <section className="section-compra_segura">
+    <section className="section-compra_segura" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom">
       <h2>
         Compra Segura y Envío <span>Garantizado</span>
       </h2>

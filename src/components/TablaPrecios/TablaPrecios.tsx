@@ -2,7 +2,8 @@ import "./TablasPrecios.css";
 
 const TablaPrecios = () => {
   return (
-    <div className="tabla-precios">
+    <div className="tabla-precios" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom">
       <h2>
         Formatos y Precios <span>Detallados</span>
       </h2>

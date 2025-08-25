@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from 'react';
 import Header from "../components/Header/Header";
 import SectionCompra from "../components/Compra/Compra";
@@ -8,6 +9,8 @@ import TablaPrecios from '../components/TablaPrecios/TablaPrecios';
 import CompraEnvioSeguro from '../components/CompraEnvioSeguro/CompraEnvioSeguro';
 import FormCompra from '../components/FormCompra/FormCompra';
 import Footer from '../components/Footer/Footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
@@ -41,6 +44,13 @@ const Home = () => {
 
     const currentPhrase = phrases[currentIndex];
 
+    useEffect(() => {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+      });
+    }, []);
 
   return (
     <>
@@ -48,12 +58,12 @@ const Home = () => {
         <Header />
       </section>
       <main className='main'>
-        <SectionCompra />
-        <Phrase
-          phrase={currentPhrase?.text}
-          onNextPhrase={handleNextPhrase}
-          loading={loading}
-        />
+          <SectionCompra/>
+          <Phrase
+            phrase={currentPhrase?.text}
+            onNextPhrase={handleNextPhrase}
+            loading={loading}
+          />
         <div className='container-main'>
           <SobreAutor />
           <section id='sobreLibro'>
