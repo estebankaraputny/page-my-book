@@ -35,17 +35,29 @@
     margin-bottom: 10px;
 }
 
-.modal-content button {
+.modal-content button, .modal-content a {
+    display: inline-block;
     width: 100%;
     margin-top: 1rem;
     padding: 10px 20px;
-    background-color: var(--color-secondary);
-    color: var(--color-white);
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.modal-content button:hover{
+.modal-content a{
     background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.modal-content button{
+    background-color: transparent;
+    color: var(--color-white);
+    border: solid 1px var(--color-white);
+}
+
+
+.modal-content button:hover, .modal-content a:hover {
+    background-color: var(--color-secondary);
 }

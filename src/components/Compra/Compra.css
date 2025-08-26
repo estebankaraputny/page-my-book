@@ -132,6 +132,7 @@
 
 .button-d {
     border: 1px solid var(--color-secondary);
+    background: transparent;
 }
 
 .container-compra__content__info__buttons>.button-c:hover,

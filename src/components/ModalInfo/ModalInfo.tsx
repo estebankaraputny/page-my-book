@@ -5,9 +5,11 @@ import "./ModalInfo.css";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  link: string;
+  tipoLibro: string;
 }
 
-const ModalTransferencia: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+const ModalTransferencia: React.FC<ModalProps> = ({ isOpen, onClose, link, tipoLibro }) => {
   // Evitar scroll cuando el modal está abierto
   useEffect(() => {
     if (isOpen) {
@@ -32,14 +34,14 @@ const ModalTransferencia: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>
       <div className="modal-content">
-        <h2>Datos de Transferencia</h2>
-        <p><span>Banco:</span> Banco Galicia</p>
+        <h2>Comprar Libro {tipoLibro}</h2>
+        <p><span>Billetera:</span> Mercado Pago</p>
         <p><span>Titular:</span> Esteban Damian Karaputny</p>
-        <p><span>CTA:</span> 4062637-6 132-9</p>
-        <p><span>CBU:</span> 0070132330004062637698</p>
-        <p><span>CUIL:</span> 20424275035</p>
-        <p><span>ALIAS:</span> estebankaraputny.gal</p>
+        <p><span>Metodo: </span> Link de pago</p>
         <span><CiCircleInfo/> Chequea que los datos sean correctos antes de realizar tu pago. Una vez realizado el pago no te olvides de rellenar el formulario que aparece más abajo.</span>
+        <div>
+          <a href={link} target="_blank">Ir a pagar</a>
+        </div>
         <button onClick={onClose}>OK</button>
       </div>
     </div>

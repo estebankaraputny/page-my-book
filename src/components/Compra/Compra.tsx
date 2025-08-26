@@ -36,10 +36,10 @@ const SectionCompra = () => {
               </p>
               <h3>Precios Disponibles</h3>
               <p className="price-f">
-                <span>Edición Física:</span> $9999 ARS
+                <span>Edición Física Preventa:</span> $9999 ARS
               </p>
               <p className="price-d">
-                <span>Edición Digital (Ebook):</span> 7,99 U$D
+                <span>Edición Digital (Ebook) Preventa:</span> $5999 ARS
               </p>
             </div>
             <div className="container-compra__content__info__buttons">
@@ -50,10 +50,19 @@ const SectionCompra = () => {
                 <ModalTransferencia
                   isOpen={isModalOpen}
                   onClose={() => setIsModalOpen(false)}
+                  link="https://mpago.la/1TpvA8B"
+                  tipoLibro="Físico"
                 />
-              <a href="" className="button-d">
-                Comprar Ebook
-              </a>
+                <button onClick={() => setIsModalOpen(true)} className="button-d"> 
+                    Comprar Edición Ebook
+                  </button>
+
+                  <ModalTransferencia
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    link="https://mpago.la/1ARAoHP"
+                    tipoLibro="Digital"
+                  />
             </div>
           </div>
         </div>
