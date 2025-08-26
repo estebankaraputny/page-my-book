@@ -45,12 +45,15 @@ const Home = () => {
     const currentPhrase = phrases[currentIndex];
 
     useEffect(() => {
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-      });
-    }, []);
+    AOS.init({
+      duration: 800,       // tiempo de animación
+      once: false,         // 👈 permite que se ejecute cada vez que aparece
+      mirror: true,        // 👈 activa animación también al hacer scroll hacia arriba
+    });
+
+    // opcional: refrescar si el DOM cambia
+    AOS.refresh();
+  }, []);
 
   return (
     <>

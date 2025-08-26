@@ -8,7 +8,7 @@ import "./Footer.css"
 
 const Footer = () => {
     return(
-        <footer className="footer" data-aos="zoom-in">
+        <footer className="footer">
             <div className="footer-contact">
                 <h3>
                     Contacto
