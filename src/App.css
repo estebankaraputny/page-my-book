@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 .main{
     background-color: #1F1F1E;
 }
@@ -20,3 +22,6 @@
 
 }
 
+.sobre-autor, .sobre-libro, .tabla-precios, .section-compra_segura, .section-form {
+    padding: 4rem 0;
+}

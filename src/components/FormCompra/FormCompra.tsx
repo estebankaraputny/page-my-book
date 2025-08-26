@@ -1,3 +1,4 @@
+"use client";
 import Form from "./Form";
 import "./FormCompra.css"
 

@@ -9,7 +9,6 @@
 
 .form-info h2{
     text-align: center;
-    margin-top: 4rem;
     margin-bottom: 1rem;
     color: #fff;
     font-weight: var(--subtitle-wieght);
@@ -93,10 +92,6 @@
 
     .form-compra{
         width: 40%;
-    }
-
-    .form-info h2{
-        margin-top: 2rem;
     }
 
     .form-info p{

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import ModalTransferencia from "../ModalInfo/ModalInfo";
 import BookPortada from "../../assets/portada-libro.jpg";

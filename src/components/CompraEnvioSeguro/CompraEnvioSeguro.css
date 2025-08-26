@@ -8,7 +8,6 @@
 
 .section-compra_segura h2 {
     text-align: center;
-    margin-top: 4rem;
     margin-bottom: 1rem;
     color: var(--color-white);
     font-weight: var(--subtitle-wieght);
@@ -30,7 +29,6 @@
 
 
 .card-compra-segura {
-    height: 10rem;
     margin-top: 1rem;
 }
 
