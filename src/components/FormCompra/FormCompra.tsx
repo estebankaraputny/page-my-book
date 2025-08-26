@@ -13,7 +13,7 @@ const FormCompra = () => {
           <p>
             ¡Gracias por tu compra! Ayúdanos a procesar tu acceso a los
             contenidos extras y a enviarte tus regalos exclusivos rellenando
-            este sencillo formulario con tu comprobante (Obligatorio para pagos por Mercado pago). Si tienes alguna duda,
+            este sencillo formulario para confirmar tu compra (Obligatorio para pagos por Mercado pago). Si tienes alguna duda,
             contáctanos a <span>coachontologicoesteban@gmail.com</span>
           </p>
         </div>
