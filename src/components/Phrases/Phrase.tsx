@@ -16,7 +16,8 @@ const Phrase: React.FC<PhraseProps> = ({ phrase, onNextPhrase, loading}: { phras
     
     return (
         <>
-            <div className="phrase-container" data-aos="zoom-in-left">
+            <div className="phrase-container" data-aos="fade-up"
+                            data-aos-anchor-placement="bottom-bottom">
                     <div>
                         <h2 className="phrase-title">Fragmentos del libro que pueden interesarte</h2>
                         <ImFire className="icon-fire" />
