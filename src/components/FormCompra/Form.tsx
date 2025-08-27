@@ -33,6 +33,8 @@ export default function Form() {
   const formRef = useRef<HTMLFormElement>(null); // 👈 usamos uno solo
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
 
   // --- VALIDACIONES ---
   //   function validateFile(archivo: File | null): boolean {
@@ -64,17 +66,7 @@ export default function Form() {
   };
 
   // --- RESET FORM ---
-  const cleanForm = () => {
-    setInfo({
-      nombreCompleto: "",
-      email: "",
-      //   archivo: null,
-      numberPhone: "",
-      message: "",
-    });
-    setError({});
-    formRef.current?.reset(); // limpia también input file
-  };
+ 
 
   // --- SUBMIT ---
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -89,6 +81,8 @@ export default function Form() {
     }
 
     if (formRef.current) {
+      setLoading(true);
+
       emailjs
         .sendForm(
           "service_hszqlst", // tu Service ID
@@ -105,8 +99,24 @@ export default function Form() {
           console.error("Error:", error);
           setModalMessage("❌ Hubo un error al enviar el formulario. Vuelve a intentarlo.");
           setIsModalOpen(true);
-        });
+        })
+        .finally(() => {
+        setLoading(false); // 👈 apagamos spinner siempre
+      });
     }
+  };
+
+
+ const cleanForm = () => {
+    setInfo({
+      nombreCompleto: "",
+      email: "",
+      //   archivo: null,
+      numberPhone: "",
+      message: "",
+    });
+    setError({});
+    formRef.current?.reset(); // limpia también input file
   };
 
   // --- HANDLE FILE ---
@@ -166,9 +176,11 @@ export default function Form() {
         />
       </label>
 
-      <button type="submit" className="form-button">
-        Enviar
+      <button type="submit" className="form-button" disabled={loading}>
+        {loading ? <span className="spinner"></span> : "Enviar"}
       </button>
+
+        
       <ModalForm
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

@@ -33,6 +33,7 @@ function App() {
       <meta name="keywords" content="libro, preventa, Incendiarse sin consumirse, Esteban Karaputny, lectura, historia real" />
       <meta name="robots" content="index, follow" />
       <meta name="index" content="index" />
+      <link rel="preload" />
       <BackgroundMusic />
       <Loader isVisible={loading} />
       <Home />
