@@ -9,7 +9,7 @@ const SectionCompra = () => {
 
   return (
     <section className="section-compra" id="comprar" data-aos="fade-up"
-     data-aos-anchor-placement="bottom-bottom">
+     data-aos-anchor-placement="top-bottom">
       <div className="container-compra">
         <div className="container-compra__title">
           <h2>PREVENTA</h2>

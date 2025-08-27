@@ -1,5 +1,5 @@
 .section-form{
-    width: 100%;
+    width: 90%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -67,14 +67,20 @@
     font-weight: 200;
     margin-top: .2rem;
 }
-
+ 
 .form-button{
-    background-color: var(--color-primary);
+    background: linear-gradient(135deg, #ff6600, #ff3300);
     color: var(--color-white);
     font-weight: 600;
     padding: 10px;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.form-button:hover{
+    background: linear-gradient(135deg, #f8883e, #f7552d);
+    box-shadow: 0 6px 20px rgba(255, 80, 0, 0.6);
 }
 
 .form-compra p{

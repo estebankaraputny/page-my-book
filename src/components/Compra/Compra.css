@@ -37,13 +37,12 @@
 .container-compra__title > h2 {
     font-size: 2.3rem;
     margin-bottom: 1rem;
-    color: var(--color-secondary);
+    color: var(--color-white);
     font-family: "Oswald", sans-serif;
 }
 
 .container-compra__title> p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
     /* max-width: 600px; */
     color: var(--color-gray);
 }

@@ -30,8 +30,8 @@ const Phrase: React.FC<PhraseProps> = ({ phrase, onNextPhrase, loading}: { phras
                                 <p className="phrase">{phrase}</p>
                             </>
                             )}
-                            <button onClick={onNextPhrase} className="change-button"><FaRotate /> Siguiente</button>
                     </div>
+                    <button onClick={onNextPhrase} className="change-button"><FaRotate /> Siguiente</button>
             </div>
         </>
     );

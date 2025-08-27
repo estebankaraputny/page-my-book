@@ -39,7 +39,7 @@ const TablaPrecios = () => {
           <tr className="tabla-precio">
             <th>Precio</th>
             <td><span>$9.999</span> En preventa. Precio Normal $15.000</td>
-            <td><span>7,99 U$D</span> En preventa. Precio Normal 12,99 U$D</td>
+            <td><span>$5.999</span> En preventa. Precio Normal $11.000</td>
           </tr>
         </tbody>
       </table>
