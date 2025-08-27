@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Loader from "./components/LoaderPage/LoaderPage";
 import Home from "./pages/Home";
 import BackgroundMusic from "./components/BackgroundAudio/BackgroundAudio";
+// import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import "./App.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <>
+      {/* <ErrorBoundary> */}
       <meta name="description" content="Preventa del libro Incendiarse sin consumirse." />
       <meta property="og:title" content="Incendiarse sin consumirse" />
       <meta property="og:description" content="Descargá tu preventa ahora." />
@@ -37,6 +39,9 @@ function App() {
       <BackgroundMusic />
       <Loader isVisible={loading} />
       <Home />
+    {/* </ErrorBoundary> */}
+    
+      
     </>
   );
 }
