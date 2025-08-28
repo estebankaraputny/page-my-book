@@ -37,7 +37,8 @@ export default function ModalTransferencia({
 
   if (!isOpen) return null;
 
-  return createPortal(
+  // return createPortal(
+  return(
     <div
       className="modal-overlay"
       ref={overlayRef}
@@ -48,6 +49,10 @@ export default function ModalTransferencia({
       <div className="modal-content" role="dialog" aria-modal="true">
         <h2>Compra Libro {tipo}</h2>
         <p>
+          <CiCircleInfo /> La PREVENTA comienza el 10/09 y finaliza el 20/10.
+          Durante este periodo el libro tendrá un precio especial de $9999 para el físico y $5999 para el digital. Luego de esta fecha, el precio del libro físico será de $15000 y el digital $11000.
+        </p> 
+        {/* <p>
           <span>Billetera:</span> Mercado Pago
         </p>
         <p>
@@ -66,11 +71,11 @@ export default function ModalTransferencia({
             <a href={link} target="_blank" rel="noopener noreferrer" className="button-c">
               Ir al pago
             </a>
-          )}
+          )} */}
           <button onClick={onClose}>OK</button>
         </div>
       </div>
-    </div>,
-    document.body
+    // </div>,
+    // document.body
   );
 }
