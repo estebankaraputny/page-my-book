@@ -4,7 +4,7 @@ import SobreCard from "./SobreCard";
 const SobreLibro = () => {
   return (
     <section className="sobre-libro" data-aos="fade-up"
-     data-aos-anchor-placement="center-bottom">
+     data-aos-anchor-placement="top-bottom">
       <h2>
         ¿Por qué elegir <span>este libro</span>?
       </h2>

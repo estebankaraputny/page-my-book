@@ -8,7 +8,7 @@ import { FaYoutube } from "react-icons/fa";
 const SobreAutor = () => {
   return (
     <section className="sobre-autor" data-aos="fade-up"
-     data-aos-anchor-placement="bottom-bottom">
+     data-aos-anchor-placement="top-bottom">
       <h2>Sobre el Autor</h2>
       <div className="contenido-autor">
         <div className="foto-autor">

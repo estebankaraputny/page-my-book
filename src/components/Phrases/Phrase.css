@@ -6,6 +6,9 @@
     font-size: 16px;
     text-align: center;
     background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .phrase-title{
