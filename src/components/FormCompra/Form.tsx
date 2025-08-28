@@ -126,7 +126,7 @@ export default function Form() {
   //   };
 
   return (
-    <form ref={formRef} className="form-compra" onSubmit={handleSubmit} data-aos="zoom-in-left">
+    <form ref={formRef} className="form-compra" onSubmit={handleSubmit} data-aos="zoom-in-left" data-netlify="true">
       <label htmlFor="nombreCompleto"> 
         Nombre Completo{" "}
         {error.nombreCompleto && <span>{error.nombreCompleto}</span>}
