@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { createPortal } from "react-dom";
+// import { createPortal } from "react-dom"; DESCOMENTAR EN PREVENTA
 import { CiCircleInfo } from "react-icons/ci";
 interface ModalProps {
   isOpen: boolean;
@@ -13,7 +13,7 @@ export default function ModalTransferencia({
   isOpen,
   onClose,
   tipo,
-  link,
+  // link, DESCOMENTAR EN PREVENTA
 }: ModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -37,7 +37,7 @@ export default function ModalTransferencia({
 
   if (!isOpen) return null;
 
-  // return createPortal(
+  // return createPortal( DESCOMENTAR EN PREVENTA
   return(
     <div
       className="modal-overlay"
@@ -52,7 +52,7 @@ export default function ModalTransferencia({
           <CiCircleInfo /> La PREVENTA comienza el 10/09 y finaliza el 20/10.
           Durante este periodo el libro tendrá un precio especial de $9999 para el físico y $5999 para el digital. Luego de esta fecha, el precio del libro físico será de $15000 y el digital $11000.
         </p> 
-        {/* <p>
+        {/* <p> DESCOMENTAR EN PREVENTA
           <span>Billetera:</span> Mercado Pago
         </p>
         <p>
@@ -76,6 +76,6 @@ export default function ModalTransferencia({
         </div>
       </div>
     // </div>,
-    // document.body
+    // document.body DESCOMENTAR EN PREVENTA
   );
 }
