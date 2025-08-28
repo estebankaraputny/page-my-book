@@ -37,7 +37,7 @@ const Header: React.FC = () => {
             </li>
             <li>
               <Link
-                to="contacto"
+                to="comprar"
                 smooth={true}
                 duration={500}
                 className="nav-button"

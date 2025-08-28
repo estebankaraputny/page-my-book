@@ -1,15 +1,102 @@
-"use client";
+// "use client";
+// import { useState } from "react";
+// import ModalTransferencia from "../ModalInfo/ModalInfo";
+// import BookPortada from "../../assets/portada-libro.jpg";
+// import "./Compra.css";
+
+// const SectionCompra = () => {
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+
+//   return (
+//     <section className="section-compra" id="comprar" data-aos="fade-up"
+//      data-aos-anchor-placement="top-bottom">
+//       <div className="container-compra">
+//         <div className="container-compra__title">
+//           <h2>PREVENTA</h2>
+//           <p>
+//             Descubre <span>Incendiarse sin consumirse</span>, una autobiografía
+//             de superación.
+//           </p>
+//         </div>
+//         <div className="container-compra__content">
+//           <div className="container-compra__content__img">
+//             <img src={BookPortada} alt="" />
+//           </div>
+//           <div className="container-compra__content__info">
+//             <div className="container-compra__content__info__text">
+//               <p className="first-paragraph">
+//                 Este gran libro te invita a explorar la resiliencia del espíritu
+//                 humano. En este libro, se comparte un viaje de superación
+//                 personal, revelando cómo encontrar la fuerza para transformarse
+//                 a través de desafíos grandes. Prepárate para una lectura
+//                 inspiradora que demuestra que, incluso en las situaciones más
+//                 difíciles, es posible incendiarse con pasión sin perder tu esencia.
+//               </p>
+//               <p className="second-paragraph">
+//                 Autor del libro: <span>Esteban Karaputny</span>
+//               </p>
+//               <h3>Precios Disponibles</h3>
+//               <p className="price-f">
+//                 <span>Edición Física Preventa:</span> $9999 ARS
+//               </p>
+//               <p className="price-d">
+//                 <span>Edición Digital (Ebook) Preventa:</span> $5999 ARS
+//               </p>
+//             </div>
+//             <div className="container-compra__content__info__buttons">
+//                 <button onClick={() => setIsModalOpen(true)} className="button-c"> 
+//                    Comprar Edición Fisica
+//                 </button>
+
+//                 <ModalTransferencia
+//                   isOpen={isModalOpen}
+//                   onClose={() => setIsModalOpen(false)}
+//                   link="https://mpago.la/1TpvA8B"
+//                   tipoLibro="Físico"
+//                 />
+//                 <button onClick={() => setIsModalOpen(true)} className="button-d"> 
+//                     Comprar Edición Ebook
+//                   </button>
+
+//                   <ModalTransferencia
+//                     isOpen={isModalOpen}
+//                     onClose={() => setIsModalOpen(false)}
+//                     link="https://mpago.la/1ARAoHP"
+//                     tipoLibro="Digital"
+//                   />
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default SectionCompra;
+
+
 import { useState } from "react";
-import ModalTransferencia from "../ModalInfo/ModalInfo";
+import ModalTransferencia from "../ModalInfo/ModalInfo"; 
 import BookPortada from "../../assets/portada-libro.jpg";
 import "./Compra.css";
 
-const SectionCompra = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+type ModalData = { open: boolean; link?: string, tipo?: "Físico" | "Digital"; };
+
+export default function SectionCompra() {
+  const [modal, setModal] = useState<ModalData>({ open: false });
+
+  const abrirModal = (tipo: "Físico" | "Digital", link: string) =>
+    setModal({ open: true, link, tipo });
+
+  const cerrarModal = () => setModal({ open: false });
 
   return (
-    <section className="section-compra" id="comprar" data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom">
+    <section
+      className="section-compra"
+      id="comprar"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+    >
       <div className="container-compra">
         <div className="container-compra__title">
           <h2>PREVENTA</h2>
@@ -20,7 +107,7 @@ const SectionCompra = () => {
         </div>
         <div className="container-compra__content">
           <div className="container-compra__content__img">
-            <img src={BookPortada} alt="" />
+            <img src={BookPortada} alt="Portada del libro" />
           </div>
           <div className="container-compra__content__info">
             <div className="container-compra__content__info__text">
@@ -44,35 +131,36 @@ const SectionCompra = () => {
               </p>
             </div>
             <div className="container-compra__content__info__buttons">
-                <button onClick={() => setIsModalOpen(true)} className="button-c"> 
-                   Comprar Edición Fisica
-                </button>
+              <button
+                onClick={() => abrirModal("Físico", "https://mpago.la/1TpvA8B")}
+                className="button-c"
+              >
+                Comprar Edición Física
+              </button>
 
-                <ModalTransferencia
-                  isOpen={isModalOpen}
-                  onClose={() => setIsModalOpen(false)}
-                  link="https://mpago.la/1TpvA8B"
-                  tipoLibro="Físico"
-                />
-                <button onClick={() => setIsModalOpen(true)} className="button-d"> 
-                    Comprar Edición Ebook
-                  </button>
-
-                  <ModalTransferencia
-                    isOpen={isModalOpen}
-                    onClose={() => setIsModalOpen(false)}
-                    link="https://mpago.la/1ARAoHP"
-                    tipoLibro="Digital"
-                  />
+              <button
+                onClick={() => abrirModal("Digital", "https://mpago.la/1ARAoHP")}
+                className="button-d"
+              >
+                Comprar Edición Ebook
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* 👇 Renderizar el modal solo cuando esté abierto */}
+      {modal.open && (
+  <ModalTransferencia
+    isOpen={modal.open}
+      tipo={modal.tipo!}
+      link={modal.link}
+      onClose={cerrarModal}
+    />
+  )}
+
     </section>
   );
-};
-
-export default SectionCompra;
-
+}
 
 

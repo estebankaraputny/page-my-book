@@ -1,51 +1,76 @@
-import {useEffect} from "react";
+"use client";
+import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { CiCircleInfo } from "react-icons/ci";
-import "./ModalInfo.css";
-
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  link: string;
-  tipoLibro: string;
+  tipo: string;
+  link?: string;
 }
 
-const ModalTransferencia: React.FC<ModalProps> = ({ isOpen, onClose, link, tipoLibro }) => {
-  // Evitar scroll cuando el modal está abierto
+export default function ModalTransferencia({
+  isOpen,
+  onClose,
+  tipo,
+  link,
+}: ModalProps) {
+  const overlayRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    if (!isOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = prev;
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Solo cerrar si el click fue en el overlay, no en el contenido
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-  return (
-    <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal-content">
-        <h2>Comprar Libro {tipoLibro}</h2>
-        <p><span>Billetera:</span> Mercado Pago</p>
-        <p><span>Titular:</span> Esteban Damian Karaputny</p>
-        <p><span>Metodo: </span> Link de pago</p>
-        <span><CiCircleInfo/> Chequea que los datos sean correctos antes de realizar tu pago. Una vez realizado el pago no te olvides de rellenar el formulario que aparece más abajo.</span>
+  return createPortal(
+    <div
+      className="modal-overlay"
+      ref={overlayRef}
+      onMouseDown={(e) => {
+        if (e.target === overlayRef.current) onClose();
+      }}
+    >
+      <div className="modal-content" role="dialog" aria-modal="true">
+        <h2>Compra Libro {tipo}</h2>
+        <p>
+          <span>Billetera:</span> Mercado Pago
+        </p>
+        <p>
+          <span>Titular:</span> Esteban Damian Karaputny
+        </p>
+        <p>
+          <span>Metodo: </span> Link de pago
+        </p>
+        <p>
+          <CiCircleInfo /> Chequea que los datos sean correctos antes de
+          realizar tu pago. Una vez realizado el pago no te olvides de rellenar
+          el formulario que aparece más abajo.
+        </p>       
         <div>
-          <a href={link} target="_blank">Ir a pagar</a>
+          {link && (
+            <a href={link} target="_blank" rel="noopener noreferrer" className="button-c">
+              Ir al pago
+            </a>
+          )}
+          <button onClick={onClose}>OK</button>
         </div>
-        <button onClick={onClose}>OK</button>
       </div>
-    </div>
+    </div>,
+    document.body
   );
-};
-
-export default ModalTransferencia;
+}
