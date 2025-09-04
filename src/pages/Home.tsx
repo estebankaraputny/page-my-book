@@ -11,6 +11,7 @@ import FormCompra from '../components/FormCompra/FormCompra';
 import Footer from '../components/Footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import CurvedLoop from '../components/CartelPreventa/CarruselPreventa';
 
 
 
@@ -61,6 +62,14 @@ const Home = () => {
         <Header />
       </section>
       <main className='main'>
+          <CurvedLoop 
+              marqueeText=" ✦ PREVENTA ✦ 10/09 AL 20/10 ✦ PREVENTA ✦ $9999 FISICO ✦ $5999 DIGITAL"
+              speed={3}
+              curveAmount={0}
+              direction="right"
+              interactive={true}
+              className="custom-text-style"
+            />
           <SectionCompra/>
           <Phrase
             phrase={currentPhrase?.text}

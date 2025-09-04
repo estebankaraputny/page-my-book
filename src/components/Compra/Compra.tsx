@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ModalTransferencia from "../ModalInfo/ModalInfo"; 
 import BookPortada from "../../assets/portada-libro.jpg";
+import CuentaAtras from "../CuentaAtras/CuentaAtras";
 import "./Compra.css";
 
 type ModalData = { open: boolean; link?: string, tipo?: "Físico" | "Digital"; };
@@ -53,7 +54,8 @@ export default function SectionCompra() {
                 <span>Edición Digital (Ebook) Preventa:</span> $5999 ARS
               </p>
             </div>
-            <div className="container-compra__content__info__buttons">
+            <CuentaAtras />
+            {/* <div className="container-compra__content__info__buttons">
               <button
                 onClick={() => abrirModal("Físico", "https://mpago.la/1TpvA8B")}
                 className="button-c"
@@ -67,7 +69,7 @@ export default function SectionCompra() {
               >
                 Comprar Edición Ebook
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

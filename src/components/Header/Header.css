@@ -133,21 +133,21 @@
 .img-book {
     z-index: 2;
     left: 35%;
-    top: 30%;
+    top: 50%;
     transform: translate(-50%, -50%) scale(1.8);
 }
 
 .img-kindle {
     z-index: 1;
     left: 65%;
-    top: 30%;
+    top: 50%;
     transform: translate(-50%, -50%) scale(1.2);
 }
 
 .img-cell {
     z-index: 3;
     left: 50%;
-    top: 40%;
+    top: 50%;
     transform: translate(-50%, -50%) scale(1.5);
 }
 
