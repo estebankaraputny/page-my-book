@@ -1,18 +1,18 @@
-import { useState } from "react";
-import ModalTransferencia from "../ModalInfo/ModalInfo"; 
+// import { useState } from "react"; 1
+// import ModalTransferencia from "../ModalInfo/ModalInfo"; 7
 import BookPortada from "../../assets/portada-libro.jpg";
 import CuentaAtras from "../CuentaAtras/CuentaAtras";
 import "./Compra.css";
 
-type ModalData = { open: boolean; link?: string, tipo?: "Físico" | "Digital"; };
+// type ModalData = { open: boolean; link?: string, tipo?: "Físico" | "Digital"; }; 2
 
 export default function SectionCompra() {
-  const [modal, setModal] = useState<ModalData>({ open: false });
+  // const [modal, setModal] = useState<ModalData>({ open: false }); 3
 
-  const abrirModal = (tipo: "Físico" | "Digital", link: string) =>
-    setModal({ open: true, link, tipo });
+  // const abrirModal = (tipo: "Físico" | "Digital", link: string) => 4
+  //   setModal({ open: true, link, tipo });
 
-  const cerrarModal = () => setModal({ open: false });
+  // const cerrarModal = () => setModal({ open: false }); 5
 
   return (
     <section
@@ -75,14 +75,14 @@ export default function SectionCompra() {
       </div>
 
       {/* 👇 Renderizar el modal solo cuando esté abierto */}
-      {modal.open && (
+      {/* {modal.open && (
   <ModalTransferencia
     isOpen={modal.open}
       tipo={modal.tipo!}
       link={modal.link}
       onClose={cerrarModal}
     />
-  )}
+  )} */} {/*6. 1,2,3,4,5, 6y7 descomentar en preventa*/}
 
     </section>
   );
