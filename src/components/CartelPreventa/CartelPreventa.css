@@ -1,5 +1,5 @@
 .curved-loop-jacket {
-  height: 2vh;
+  min-height: 2vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -23,8 +23,8 @@
 }
 
 
-@media (min-width: 700px) {
+/* @media (min-width: 700px) {
     .curved-loop-jacket{
         height: 6svh;
     }
-}
+} */
