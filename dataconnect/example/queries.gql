@@ -1,0 +1,39 @@
+mutation CreateNewBook @auth(level: USER) {
+  book_insert(data: {
+    title: "A new book title",
+    synopsis: "A great book",
+    publicationYear: 2024
+  })
+}
+
+query ListAllBooks @auth(level: PUBLIC) {
+  books {
+    id
+    title
+    synopsis
+    publicationYear
+  }
+}
+
+query GetBookById {
+  book(id: "550e8400-e29b-41d4-a716-446655440000") @auth(level: PUBLIC) {
+    id
+    title
+    synopsis
+    publicationYear
+    chapters_on_book {
+      id
+      title
+      content
+    }
+  }
+}
+
+mutation UpdateChapterContent {
+  chapter_update(
+    id: "550e8400-e29b-41d4-a716-446655440000"
+    data: {
+      content: "Updated chapter content"
+    }
+  ) @auth(level: USER)
+}

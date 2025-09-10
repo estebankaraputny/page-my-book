@@ -1,0 +1,102 @@
+mutation SeedDatabase @auth(level: USER) {
+  author_upsertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      bio: "An accomplished writer.",
+      createdAt: "2024-01-01T00:00:00Z",
+      name: "Jane Doe",
+      email: "jane.doe@example.com",
+      photoUrl: "https://example.com/jane.jpg",
+      website: "https://example.com/jane"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      bio: "A prolific poet.",
+      createdAt: "2024-02-15T00:00:00Z",
+      name: "Richard Roe",
+      email: "richard.roe@example.com",
+      photoUrl: "https://example.com/richard.jpg",
+      website: "https://example.com/richard"
+    }
+  ])
+  book_upsertMany(data: [
+    {
+      id: "650e8400-e29b-41d4-a716-446655440002",
+      coverImageUrl: "https://example.com/book1.jpg",
+      createdAt: "2024-03-10T00:00:00Z",
+      isbn: "978-0321765723",
+      publicationYear: 2022,
+      synopsis: "A captivating story.",
+      title: "The First Book",
+      purchaseLinks: ["https://example.com/buy1", "https://example.com/amazon1"]
+    },
+    {
+      id: "750e8400-e29b-41d4-a716-446655440003",
+      coverImageUrl: "https://example.com/book2.jpg",
+      createdAt: "2024-04-20T00:00:00Z",
+      isbn: "978-0143105848",
+      publicationYear: 2023,
+      synopsis: "An intriguing mystery.",
+      title: "The Second Book",
+      purchaseLinks: ["https://example.com/buy2", "https://example.com/amazon2"]
+    }
+  ])
+  chapter_upsertMany(data: [
+    {
+      id: "850e8400-e29b-41d4-a716-446655440004",
+      bookId: "650e8400-e29b-41d4-a716-446655440002",
+      chapterNumber: 1,
+      content: "Once upon a time...",
+      createdAt: "2024-03-15T00:00:00Z",
+      isSample: true,
+      title: "Chapter One"
+    },
+    {
+      id: "950e8400-e29b-41d4-a716-446655440005",
+      bookId: "750e8400-e29b-41d4-a716-446655440003",
+      chapterNumber: 2,
+      content: "The plot thickens...",
+      createdAt: "2024-04-25T00:00:00Z",
+      isSample: false,
+      title: "Chapter Two"
+    }
+  ])
+  resource_upsertMany(data: [
+    {
+      id: "a50e8400-e29b-41d4-a716-446655440006",
+      bookId: "650e8400-e29b-41d4-a716-446655440002",
+      createdAt: "2024-03-20T00:00:00Z",
+      resourceType: "Website",
+      title: "Related Website",
+      url: "https://related.com",
+      description: "A helpful resource."
+    },
+    {
+      id: "b50e8400-e29b-41d4-a716-446655440007",
+      bookId: "750e8400-e29b-41d4-a716-446655440003",
+      createdAt: "2024-04-30T00:00:00Z",
+      resourceType: "Document",
+      title: "Additional Notes",
+      url: "https://notes.com",
+      description: "Extra information."
+    }
+  ])
+  testimonial_upsertMany(data: [
+    {
+      id: "c50e8400-e29b-41d4-a716-446655440008",
+      bookId: "650e8400-e29b-41d4-a716-446655440002",
+      authorName: "Reviewer One",
+      authorLocation: "New York",
+      content: "A must-read!",
+      createdAt: "2024-03-25T00:00:00Z"
+    },
+    {
+      id: "d50e8400-e29b-41d4-a716-446655440009",
+      bookId: "750e8400-e29b-41d4-a716-446655440003",
+      authorName: "Reviewer Two",
+      authorLocation: "London",
+      content: "Highly recommended!",
+      createdAt: "2024-05-05T00:00:00Z"
+    }
+  ])
+}

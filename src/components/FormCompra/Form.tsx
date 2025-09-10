@@ -134,7 +134,7 @@ export default function Form() {
           type="text"
           value={info.nombreCompleto}
           onChange={(e) => setInfo({ ...info, nombreCompleto: e.target.value })}
-          placeholder="Pedro Gimenez"
+          placeholder="Lionel Messi"
           name="nombreCompleto"
           id="nombreCompleto"
         />
@@ -146,7 +146,7 @@ export default function Form() {
           type="text"
           value={info.email}
           onChange={(e) => setInfo({ ...info, email: e.target.value })}
-          placeholder="ejemplo@gmail.com"
+          placeholder="liomessi10@gmail.com"
           name="email"
           id="email"
         />
@@ -159,7 +159,7 @@ export default function Form() {
           type="text"
           value={info.numberPhone}
           onChange={(e) => setInfo({ ...info, numberPhone: e.target.value })}
-          placeholder="1234567890"
+          placeholder="1128549565"
           name="numberPhone"
           id="numberPhone"
         />

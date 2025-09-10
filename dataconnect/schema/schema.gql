@@ -1,0 +1,44 @@
+type Author @table {
+  name: String!
+  bio: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+  website: String
+}
+
+type Book @table {
+  title: String!
+  synopsis: String!
+  publicationYear: Int!
+  createdAt: Timestamp!
+  isbn: String
+  coverImageUrl: String
+  purchaseLinks: [String]
+}
+
+type Chapter @table {
+  book: Book
+  title: String!
+  chapterNumber: Int!
+  content: String!
+  createdAt: Timestamp!
+  isSample: Boolean
+}
+
+type Testimonial @table {
+  book: Book
+  authorName: String!
+  content: String!
+  createdAt: Timestamp!
+  authorLocation: String
+}
+
+type Resource @table {
+  book: Book
+  title: String!
+  resourceType: String!
+  url: String!
+  createdAt: Timestamp!
+  description: String
+}

@@ -63,7 +63,7 @@ const Home = () => {
       </section>
       <main className='main'>
           <CurvedLoop 
-              marqueeText=" ✦ PREVENTA ✦ 10/09 AL 20/10 ✦ PREVENTA ✦ $9999 FISICO ✦ $5999 DIGITAL"
+              marqueeText=" ✦ PREVENTA ✦ 10/09 AL 20/10 ✦ PREVENTA ✦ $9999 FISICO ✦ $5999 DIGITAL ✦ LAZAMIENTO OFICIAL 24/10 ✦ Incendiarse sin consumirse"
               speed={3}
               curveAmount={0}
               direction="right"

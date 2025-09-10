@@ -1,18 +1,17 @@
-// import { useState } from "react"; 1
-// import ModalTransferencia from "../ModalInfo/ModalInfo"; 7
+import { useState } from "react"; 
+import ModalTransferencia from "../ModalInfo/ModalInfo"; 
 import BookPortada from "../../assets/portada-libro.jpg";
-import CuentaAtras from "../CuentaAtras/CuentaAtras";
 import "./Compra.css";
 
-// type ModalData = { open: boolean; link?: string, tipo?: "Físico" | "Digital"; }; 2
+type ModalData = { open: boolean; link?: string, tipo?: "Físico" | "Digital"; }; 
 
-export default function SectionCompra() {
-  // const [modal, setModal] = useState<ModalData>({ open: false }); 3
+export default function SectionCompra(){
+  const [modal, setModal] = useState<ModalData>({ open: false }); 
 
-  // const abrirModal = (tipo: "Físico" | "Digital", link: string) => 4
-  //   setModal({ open: true, link, tipo });
+  const abrirModal = (tipo: "Físico" | "Digital", link: string) => 
+    setModal({ open: true, link, tipo });
 
-  // const cerrarModal = () => setModal({ open: false }); 5
+  const cerrarModal = () => setModal({ open: false }); 
 
   return (
     <section
@@ -54,8 +53,7 @@ export default function SectionCompra() {
                 <span>Edición Digital (Ebook) Preventa:</span> $5999 ARS
               </p>
             </div>
-            <CuentaAtras />
-            {/* <div className="container-compra__content__info__buttons">
+            <div className="container-compra__content__info__buttons">
               <button
                 onClick={() => abrirModal("Físico", "https://mpago.la/1TpvA8B")}
                 className="button-c"
@@ -69,23 +67,21 @@ export default function SectionCompra() {
               >
                 Comprar Edición Ebook
               </button>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
 
       {/* 👇 Renderizar el modal solo cuando esté abierto */}
-      {/* {modal.open && (
-  <ModalTransferencia
-    isOpen={modal.open}
-      tipo={modal.tipo!}
-      link={modal.link}
-      onClose={cerrarModal}
-    />
-  )} */} {/*6. 1,2,3,4,5, 6y7 descomentar en preventa*/}
+      {modal.open && (
+        <ModalTransferencia
+          isOpen={modal.open}
+            tipo={modal.tipo!}
+            link={modal.link}
+            onClose={cerrarModal}
+          />
+        )} 
 
     </section>
   );
-}
-
-
+};
