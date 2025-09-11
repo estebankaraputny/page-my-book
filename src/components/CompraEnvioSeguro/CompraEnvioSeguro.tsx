@@ -7,7 +7,7 @@ const CompraEnvioSeguro = () => {
     <section className="section-compra_segura" data-aos="fade-up"
      data-aos-anchor-placement="bottom-bottom">
       <h2>
-        Compra Segura y Envío <span>Garantizado</span>
+        Compra Segura y <span>Envío</span>
       </h2>
       <div className="compra-segura_cards">
             <CardCompraSegura 
