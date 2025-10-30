@@ -63,9 +63,12 @@ const Header: React.FC = () => {
               >
                 Comprar
               </Link>
-              <a href="" className="portada-boton saber-mas">
+              <Link
+                 to="sobreLibro"
+                 className="portada-boton saber-mas"
+              >
                 Saber más
-              </a>
+              </Link>
             </div>
           </div>
           <div className="portada-imagenes">

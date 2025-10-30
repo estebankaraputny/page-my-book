@@ -12,6 +12,7 @@ import Footer from '../components/Footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CurvedLoop from '../components/CartelPreventa/CarruselPreventa';
+import Testimonios from '../components/Testimonios/Testimonios';
 
 
 
@@ -63,7 +64,7 @@ const Home = () => {
       </section>
       <main className='main'>
           <CurvedLoop 
-              marqueeText=" ✦ PREVENTA ✦ 10/09 AL 20/10 ✦ PREVENTA ✦ $9999 FISICO ✦ $5999 DIGITAL ✦ LAZAMIENTO OFICIAL 24/10 ✦ Incendiarse sin consumirse"
+              marqueeText=" ✦ LANZAMIENTO OFICIAL ✦ 24/10/25 ✦ $14999 FISICO ✦ $9999 DIGITAL ✦ Incendiarse sin consumirse"
               speed={3}
               curveAmount={0}
               direction="right"
@@ -85,6 +86,9 @@ const Home = () => {
           <CompraEnvioSeguro/>
           <section id='contacto'>
             <FormCompra />
+          </section>
+          <section id='testimonios'>
+            <Testimonios />
           </section>
         </div>
       </main>

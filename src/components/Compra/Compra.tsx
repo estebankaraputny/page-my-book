@@ -22,7 +22,7 @@ export default function SectionCompra(){
     >
       <div className="container-compra">
         <div className="container-compra__title">
-          <h2>PREVENTA</h2>
+          <h2>COMPRAR LIBRO</h2>
           <p>
             Descubre <span>Incendiarse sin consumirse</span>, una autobiografía
             de superación.
@@ -47,22 +47,22 @@ export default function SectionCompra(){
               </p>
               <h3>Precios Disponibles</h3>
               <p className="price-f">
-                <span>Edición Física Preventa:</span> $9999 ARS
+                <span>Edición Física:</span> $14999 ARS
               </p>
               <p className="price-d">
-                <span>Edición Digital (Ebook) Preventa:</span> $5999 ARS
+                <span>Edición Digital (Ebook):</span> $9999 ARS
               </p>
             </div>
             <div className="container-compra__content__info__buttons">
               <button
-                onClick={() => abrirModal("Físico", "https://mpago.la/1TpvA8B")}
+                onClick={() => abrirModal("Físico", "https://mpago.la/1C6UJvZ")}
                 className="button-c"
               >
                 Comprar Edición Física
               </button>
 
               <button
-                onClick={() => abrirModal("Digital", "https://mpago.la/1ARAoHP")}
+                onClick={() => abrirModal("Digital", "https://mpago.la/2aAn6nT")}
                 className="button-d"
               >
                 Comprar Edición Ebook
