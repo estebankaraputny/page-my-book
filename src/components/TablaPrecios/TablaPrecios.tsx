@@ -38,7 +38,7 @@ const TablaPrecios = () => {
           </tr>
           <tr className="tabla-precio">
             <th>Precio</th>
-            <td><span>$14.999</span></td>
+            <td><span>$17.999</span></td>
             <td><span>$9.999</span></td>
           </tr>
         </tbody>

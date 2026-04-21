@@ -3,9 +3,12 @@ import ModalTransferencia from "../ModalInfo/ModalInfo";
 import BookPortada from "../../assets/portada-libro.jpg";
 import "./Compra.css";
 
+
 type ModalData = { open: boolean; link?: string, tipo?: "Físico" | "Digital"; }; 
 
 export default function SectionCompra(){
+  const linkFisico = import.meta.env.VITE_MP_LINK_PAGO_FISICO;
+  const linkOnline = import.meta.env.VITE_MP_LINK_PAGO_ONLINE;
   const [modal, setModal] = useState<ModalData>({ open: false }); 
 
   const abrirModal = (tipo: "Físico" | "Digital", link: string) => 
@@ -47,7 +50,7 @@ export default function SectionCompra(){
               </p>
               <h3>Precios Disponibles</h3>
               <p className="price-f">
-                <span>Edición Física:</span> $14999 ARS
+                <span>Edición Física:</span> $17999 ARS
               </p>
               <p className="price-d">
                 <span>Edición Digital (Ebook):</span> $9999 ARS
@@ -55,14 +58,14 @@ export default function SectionCompra(){
             </div>
             <div className="container-compra__content__info__buttons">
               <button
-                onClick={() => abrirModal("Físico", "https://mpago.la/1C6UJvZ")}
+                onClick={() => abrirModal("Físico", linkFisico!)}
                 className="button-c"
               >
                 Comprar Edición Física
               </button>
 
               <button
-                onClick={() => abrirModal("Digital", "https://mpago.la/2aAn6nT")}
+                onClick={() => abrirModal("Digital", linkOnline!)}
                 className="button-d"
               >
                 Comprar Edición Ebook
