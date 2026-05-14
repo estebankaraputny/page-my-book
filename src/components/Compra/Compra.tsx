@@ -53,7 +53,7 @@ export default function SectionCompra(){
                 <span>Edición Física:</span> $17999 ARS
               </p>
               <p className="price-d">
-                <span>Edición Digital (Ebook):</span> $9999 ARS
+                <span>Edición Digital (Ebook):</span> $12999 ARS
               </p>
             </div>
             <div className="container-compra__content__info__buttons">

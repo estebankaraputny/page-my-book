@@ -16,8 +16,8 @@ const SobreAutor = () => {
         </div>
         <div className="info-autor">
           <p>
-            Esteban Karaputny se esta formando como coach ontológico y creador de contenido de
-            desarrollo personal. Su historia, narrada a través de Gocchy Katny,
+            Esteban Karaputny es Coach ontológico y creador de contenido de
+            desarrollo personal con mas de 2000 seguidores. Su historia, narrada a través de Gocchy Katny,
             atraviesa la oscuridad con un mensaje de luz. Vive para sanar… y
             para encender. Este libro no busca aplausos ni respuestas. Es el
             grito silencioso de una vida que se reconstruyó desde el barro. Una
